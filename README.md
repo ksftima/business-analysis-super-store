@@ -1,15 +1,37 @@
-A business analyst practice project exploring the Kaggle "Superstore" sales dataset:
-trends, segmentation and growth analysis.
+# Superstore Sales Analysis
+
+Business analyst case study on the Kaggle "Superstore" sales dataset (2015-2018):
+sales trends, regional and category performance, seasonality, and a short-term
+sales forecast.
+
+![Monthly sales trend, 2015-2018](images/monthly_sales_trend.png)
+
+## Key Findings
+
+- Revenue grew **50.3%** from 2015 to 2018, but driven by a handful of strong
+  months each year rather than steady month-to-month growth.
+- **West and East** regions lead in sales and are growing fastest; **South**
+  lags on both.
+- **Office Supplies** is the fastest-growing category, despite Technology and
+  Furniture having similar total revenue today.
+- Revenue is *not* concentrated in a few accounts: the top 10 customers make up
+  only 6.8% of total sales.
+- Sales peak sharply in September and November-December (back-to-school and
+  holiday buying) - more than half of all months actually decline from the
+  month before, so growth comes from these peaks, not consistent momentum.
+
+Full write-up, with recommendations: [**REPORT.md**](REPORT.md)
 
 ## Project structure
 
 | File | Purpose |
 |---|---|
-| `overall_performance.ipynb` | overall exploratory analysis, monthly and yearly trends + plots. |
-| `segment_analysis.ipynb` | analysis by region, categories/sub-categories and top customers |
-| `trend_timing.ipynb` | seasonality, fastest/slowest growth by region and category, shipping delays |
-| `forecasting.ipynb` | simple monthly sales forecast (Holt-Winters exponential smoothing) |
-| `eda.py` | Script version / scratch space for quick checks. |
+| `overall_performance.ipynb` | Overall exploratory analysis - monthly/yearly trends, growth rates. |
+| `segment_analysis.ipynb` | Analysis by region, category/sub-category, and top customers. |
+| `trend_timing.ipynb` | Seasonality, fastest/slowest growth by region and category, shipping delays. |
+| `forecasting.ipynb` | Simple monthly sales forecast (Holt-Winters exponential smoothing). |
+| `REPORT.md` | Business summary of findings and recommendations. |
+| `chart_style.py` | Shared matplotlib styling (colors, fonts) used across all notebooks. |
 | `metadata.py` | Data dictionary as a Python dict (`METADATA`) - column names, descriptions, and types. |
 | `data/supermarket_sales.csv` | The dataset (not tracked in git - see below). |
 | `requirements.txt` | Python dependencies. |
@@ -36,15 +58,7 @@ pip install -r requirements.txt
 Requires Kaggle API credentials configured (`KAGGLE_USERNAME`/`KAGGLE_KEY` or
 `KAGGLE_API_TOKEN` as an environment variable) if you need to re-download the data.
 
-## What's covered so far
+## Next Steps
 
-- Data cleaning: null checks, date type conversion, deduplication
-- Monthly and yearly sales trends, with a fitted trend line
-- Month-over-month and year-over-year growth rates
-- Sales segmentation by region, category, sub-category, and top customers
-- Seasonality (sales by month-of-year), fastest/slowest growing region and category
-- Shipping delay analysis by ship mode and region
-- A simple 3-month sales forecast, with caveats
-
-As a next step, I plan to package the best charts and findings into a one-page summary
-or dashboard.
+A dashboard packaging the key charts above into a single interactive view is in
+progress.

@@ -1,4 +1,5 @@
 .env
 .csv
 *.csv
-*.md
+ASSIGNMENT.md
+__pycache__/

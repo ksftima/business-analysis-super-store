@@ -7,14 +7,16 @@ trends, segmentation and growth analysis.
 |---|---|
 | `overall_performance.ipynb` | overall exploratory analysis, monthly and yearly trends + plots. |
 | `segment_analysis.ipynb` | analysis by region, categories/sub-categories and top customers |
+| `trend_timing.ipynb` | seasonality, fastest/slowest growth by region and category, shipping delays |
+| `forecasting.ipynb` | simple monthly sales forecast (Holt-Winters exponential smoothing) |
 | `eda.py` | Script version / scratch space for quick checks. |
-| `metadata.py` | Data dictionary as a Python dict (`METADATA`) — column names, descriptions, and types. |
-| `data/supermarket_sales.csv` | The dataset (not tracked in git — see below). |
+| `metadata.py` | Data dictionary as a Python dict (`METADATA`) - column names, descriptions, and types. |
+| `data/supermarket_sales.csv` | The dataset (not tracked in git - see below). |
 | `requirements.txt` | Python dependencies. |
 
 ## Dataset
 
-Source: [Kaggle — rohitsahoo/sales-forecasting](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
+Source: [Kaggle - rohitsahoo/sales-forecasting](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
 (the "Superstore" sales dataset). One row = one line item within an order.
 
 The CSV isn't committed to this repo. To get it:
@@ -39,4 +41,10 @@ Requires Kaggle API credentials configured (`KAGGLE_USERNAME`/`KAGGLE_KEY` or
 - Data cleaning: null checks, date type conversion, deduplication
 - Monthly and yearly sales trends, with a fitted trend line
 - Month-over-month and year-over-year growth rates
-- Sales segmentation by region, category, and customer
+- Sales segmentation by region, category, sub-category, and top customers
+- Seasonality (sales by month-of-year), fastest/slowest growing region and category
+- Shipping delay analysis by ship mode and region
+- A simple 3-month sales forecast, with caveats
+
+As a next step, I plan to package the best charts and findings into a one-page summary
+or dashboard.

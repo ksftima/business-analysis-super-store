@@ -30,8 +30,9 @@ Full write-up, with recommendations: [**REPORT.md**](REPORT.md)
 | `segment_analysis.ipynb` | Analysis by region, category/sub-category, and top customers. |
 | `trend_timing.ipynb` | Seasonality, fastest/slowest growth by region and category, shipping delays. |
 | `forecasting.ipynb` | Simple monthly sales forecast (Holt-Winters exponential smoothing). |
+| `streamlit_dashboard/` | Interactive Streamlit dashboard - see below to run it. |
 | `REPORT.md` | Business summary of findings and recommendations. |
-| `chart_style.py` | Shared matplotlib styling (colors, fonts) used across all notebooks. |
+| `chart_style.py` | Shared matplotlib styling (colors, fonts) used across all notebooks and the dashboard. |
 | `metadata.py` | Data dictionary as a Python dict (`METADATA`) - column names, descriptions, and types. |
 | `data/supermarket_sales.csv` | The dataset (not tracked in git - see below). |
 | `requirements.txt` | Python dependencies. |
@@ -58,7 +59,18 @@ pip install -r requirements.txt
 Requires Kaggle API credentials configured (`KAGGLE_USERNAME`/`KAGGLE_KEY` or
 `KAGGLE_API_TOKEN` as an environment variable) if you need to re-download the data.
 
+## Dashboard
+
+An interactive Streamlit dashboard (KPIs, region/category filters, the charts
+above) lives in `streamlit_dashboard/`. To run it locally:
+
+```bash
+cd streamlit_dashboard
+streamlit run dashboard.py
+```
+
+This opens a browser tab at `http://localhost:8501`.
+
 ## Next Steps
 
-A dashboard packaging the key charts above into a single interactive view is in
-progress.
+Deploy the dashboard (e.g. Streamlit Community Cloud) for a live, shareable link.

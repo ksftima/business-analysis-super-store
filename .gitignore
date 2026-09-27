@@ -1,5 +1,6 @@
 .env
 .csv
 *.csv
+!data/supermarket_sales.csv
 ASSIGNMENT.md
 __pycache__/

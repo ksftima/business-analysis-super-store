@@ -34,7 +34,7 @@ Full write-up, with recommendations: [**REPORT.md**](REPORT.md)
 | `REPORT.md` | Business summary of findings and recommendations. |
 | `chart_style.py` | Shared matplotlib styling (colors, fonts) used across all notebooks and the dashboard. |
 | `metadata.py` | Data dictionary as a Python dict (`METADATA`) - column names, descriptions, and types. |
-| `data/supermarket_sales.csv` | The dataset (not tracked in git - see below). |
+| `data/supermarket_sales.csv` | The dataset (committed - see below). |
 | `requirements.txt` | Python dependencies. |
 
 ## Dataset
@@ -42,7 +42,9 @@ Full write-up, with recommendations: [**REPORT.md**](REPORT.md)
 Source: [Kaggle - rohitsahoo/sales-forecasting](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
 (the "Superstore" sales dataset). One row = one line item within an order.
 
-The CSV isn't committed to this repo. To get it:
+The CSV is committed to this repo (`data/supermarket_sales.csv`) so the notebooks
+and dashboard run out of the box - no download needed. To re-fetch a fresh copy
+instead:
 
 ```bash
 kaggle datasets download rohitsahoo/sales-forecasting --unzip
